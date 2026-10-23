@@ -1,0 +1,90 @@
+{
+  "sourceDirectory": "Things_to _add",
+  "uiArchive": "bloom-lock_-multiverse-lockdown.zip",
+  "portalArchive": "golden_circular_portal.zip",
+  "playerArchive": "A_portal_golden_LIke.zip",
+  "obstacleArchive": "obstacle.zip",
+  "fragmentArchive": "WhatsApp Unknown 2026-10-23 at 5.49.58 PM.zip",
+  "assets": [
+    {
+      "path": "/assets/player/east.png",
+      "sha256": "f082f2f6efe8e72a0938915772750be7dc70d8470385f7d50bf4627b53fa0852"
+    },
+    {
+      "path": "/assets/player/north-east.png",
+      "sha256": "2f452818851f068f7a1058874062284fc98967e820fe61425dd41a69e3fa8a01"
+    },
+    {
+      "path": "/assets/player/north-west.png",
+      "sha256": "59e93e9e06d4adcaab25a7a0269822d98264147fe35c95f7593d930b86483b26"
+    },
+    {
+      "path": "/assets/player/north.png",
+      "sha256": "d5c6fdd34dd92a94ceb47eb2d4ce227ca65243903eb4a5a73d258dfe29373760"
+    },
+    {
+      "path": "/assets/player/south-east.png",
+      "sha256": "56e4267e151d2ee5dbe5ff862caa8deb93a3b6a9d47ccf1fb8e70da999bafc7d"
+    },
+    {
+      "path": "/assets/player/south-west.png",
+      "sha256": "3691cef9916a2dc31adcd196ae20830a9e26a1c9c5ece63d39e3005c800821c6"
+    },
+    {
+      "path": "/assets/player/south.png",
+      "sha256": "9fadde760101ea42728f7b600d39248379bdfa924b6e3f7cbf5d24f2244ccd19"
+    },
+    {
+      "path": "/assets/player/west.png",
+      "sha256": "579dbb6725c3ca9e792f99fbed0e07db9c318cca02ff4f5ea56c5259f51ec02d"
+    },
+    {
+      "path": "/assets/portal/golden_circular_portal.png",
+      "sha256": "e6b020ef5ec73d2a91c9f6fff098bfc5eafc661ae2ad5e28a9d73d5ccd5d0de1"
+    },
+    {
+      "path": "/assets/obstacle/obstacle.png",
+      "sha256": "e31786502357d6852cdbea9f6bdcd3282bc5c77eeec4ce73ddc7205cb2dee53c"
+    },
+    {
+      "path": "/assets/fragments/stone-1.png",
+      "sha256": "87ee60bec23d82064efce9b4b8764625eaf1d01d4df503d51108981a692364ac"
+    },
+    {
+      "path": "/assets/fragments/stone-10.png",
+      "sha256": "0d7f7420b0222643306def5dd7b93b973cfe957b78f688f7fe13589c396ef110"
+    },
+    {
+      "path": "/assets/fragments/stone-2.png",
+      "sha256": "2ce01106571dd9f43df3af6ecdbecd8e7ffb724fde0edea26e09d16b3a295ebe"
+    },
+    {
+      "path": "/assets/fragments/stone-3.png",
+      "sha256": "0f8aa4c7addbb999dc2c287098e9d7b47164e36ec7ec9ac725e1c7fca488d61c"
+    },
+    {
+      "path": "/assets/fragments/stone-4.png",
+      "sha256": "8850211f720a367407d73eae8fa29bbefa5894415d45b4bff9fba6835f1bac3e"
+    },
+    {
+      "path": "/assets/fragments/stone-5.png",
+      "sha256": "b81b56016cb4d30ba2ba7ef9db91bf02e4133814e82026d02169df0722ec1058"
+    },
+    {
+      "path": "/assets/fragments/stone-6.png",
+      "sha256": "f62d302c5f32ec9f608ca9549db791774b6939b8aad25119d46ceddb8f50fd40"
+    },
+    {
+      "path": "/assets/fragments/stone-7.png",
+      "sha256": "f0ff5b5d2b3d7f23c129db4e43e49d3b3b4cb8e4abe2834a22ee590f7d0e152a"
+    },
+    {
+      "path": "/assets/fragments/stone-8.png",
+      "sha256": "e98c9c74801644c1fb1469ca7b67b5e6aeac544d6481eb3d5f04485ada3103e0"
+    },
+    {
+      "path": "/assets/fragments/stone-9.png",
+      "sha256": "6f95511cc2b0f05e5c1a1f7a3ccd645fe631ff5c70ee9eb830b35f609a993105"
+    }
+  ]
+}

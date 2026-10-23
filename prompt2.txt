@@ -1,0 +1,241 @@
+You are the Driver and lead gameplay engineer for our Pixathon team. Implement “Bloomlock: Multiverse Lockdown,” including the exact tutorial level supplied below.
+
+Read AGENTS.md and inspect the existing project first. Use the existing stack and preserve teammates’ work. If the project is empty, choose a lightweight browser-compatible setup.
+
+PROJECT
+
+Category: Topic 3 — Puzzle with a Twist.
+Theme: Doctor Strange navigating a fractured Sanctum.
+
+Display this rule:
+“Collect every fragment and reach the portal. Each fragment seals the square you just left.”
+
+Prioritise a working browser game with reusable logic and replaceable artwork.
+
+COORDINATE CONVENTION — IMPORTANT
+
+All coordinates use zero-indexed (row, column), measured from the top-left.
+
+UP: row - 1
+DOWN: row + 1
+LEFT: column - 1
+RIGHT: column + 1
+
+Use named row/column properties in level data to avoid ambiguity.
+
+EXACT GAME RULES
+
+- Each valid move advances the player one orthogonal square.
+- Walls, created barriers, and board boundaries block movement.
+- Entering an uncollected fragment collects it and creates an energy barrier on the square the player LEFT.
+- The fragment’s square remains walkable.
+- Ordinary movement creates no barrier.
+- Revisiting a collected fragment’s square creates no new barrier.
+- Invalid moves change nothing, including move count and undo history.
+- The portal is visually locked and inactive until every fragment is collected.
+- A locked portal tile remains walkable; entering it early does not win.
+- Victory occurs when the player is on the portal with every fragment collected.
+- Block further movement after victory, while allowing undo and restart.
+- Animation must not cause overlapping moves or change logical results.
+
+REQUIRED LEVEL 1 — THE FIRST SEAL
+
+Implement this level exactly. Do not add walls, extra fragments, or forced turns.
+
+{
+  "id": "level-1",
+  "name": "The First Seal",
+  "rows": 5,
+  "columns": 5,
+  "start": { "row": 2, "column": 0 },
+  "fragments": [
+    { "row": 2, "column": 2 }
+  ],
+  "exit": { "row": 2, "column": 4 },
+  "walls": []
+}
+
+All unspecified squares are walkable floor.
+
+Initial layout:
+
+. . . . .
+. . . . .
+S . F . E
+. . . . .
+. . . . .
+
+S = start
+F = fragment
+E = portal
+
+EXPECTED TUTORIAL PLAYTHROUGH
+
+Initial:
+Player (2,0), fragments 0/1, no barriers, moves 0, portal locked.
+
+1. RIGHT:
+Player (2,1), fragments 0/1, no barriers, moves 1.
+
+2. RIGHT:
+Player (2,2), fragments 1/1.
+Remove the fragment from the board.
+Create exactly one barrier at (2,1).
+Moves 2.
+Activate the portal.
+Do not award victory yet.
+
+3. RIGHT:
+Player (2,3), barrier still at (2,1), moves 3.
+
+4. RIGHT:
+Player (2,4), fragments 1/1, moves 4.
+Award victory.
+
+Expected solution:
+RIGHT, RIGHT, RIGHT, RIGHT.
+
+FRAGMENT PREVIEW — REQUIRED
+
+Before collection, when the player is at (2,1) and RIGHT would enter the fragment at (2,2):
+
+- Highlight (2,1) as the square that WILL become blocked.
+- Use a dashed violet outline or comparable distinct indicator.
+- Keep the player visible inside that preview.
+- Show a small label: “This square seals.”
+- Highlight (2,2) separately as the destination.
+- Do not show (2,2) as the future barrier.
+
+Preview must not mutate game state.
+
+Make this understandable on touch devices too. When adjacent to a fragment, show the applicable barrier preview without requiring mouse hover.
+
+TIME REWIND AND RESTART
+
+Undo is labelled “Time Rewind.”
+
+Store the complete state before every successful move.
+
+Undo must restore:
+- Player position
+- Collected fragments
+- Created barriers
+- Successful move count
+- Portal activation
+- Win status
+
+Required collection undo:
+After the second RIGHT, undo must restore:
+- Player at (2,1)
+- Fragment at (2,2)
+- No barrier at (2,1)
+- Fragments 0/1
+- Moves 1
+- Portal locked
+- Game in progress
+
+Undo after victory must return to the previous playable state.
+
+Restart restores the original level and clears undo history.
+
+ENGINE STRUCTURE
+
+Separate game logic from rendering and input.
+
+Provide operations equivalent to:
+- loadLevel(level)
+- move(direction)
+- previewMove(direction)
+- undo()
+- restart()
+- getState()
+
+Keep level definitions immutable. Prevent outside callers from accidentally mutating internal state.
+
+Expose events or results for movement, fragment collection, barrier creation, portal activation, rewind, and victory so the Artist’s effects can be integrated later.
+
+LEVELS AND SOLVER
+
+Store editable level definitions separately from engine code.
+
+Validate dimensions, bounds, object placement, exactly one start, exactly one exit, and at least one fragment.
+
+Preserve supplied Puzzle Master levels.
+
+Keep Level 1 exactly as specified. Target five levels overall. If Levels 2–5 have not been provided, create clearly labelled provisional levels exploring approach direction and collection order.
+
+Implement a solver using the same legal state transitions as gameplay.
+
+Search-state identity must include:
+- Player position
+- Collected fragments
+- Created barriers
+
+Verify every included level and save a valid solution.
+
+Only report “unsolvable” after exhaustive search. Report “verification incomplete” if a search limit is reached.
+
+MINIMAL PLAYABLE UI
+
+Include:
+- Responsive board
+- Level number and name
+- Visible one-line rule
+- Arrow-key/WASD movement
+- Touch direction controls
+- Fragment and move counters
+- Time Rewind
+- Restart
+- Clear locked/active portal appearances
+- Victory feedback
+- Next-level action when another level exists
+
+Use distinct icons/shapes as well as colour.
+
+Keep assets, colours, animation timings, and sound hooks easy to replace. Use existing Artist assets when available; otherwise use readable placeholders.
+
+REQUIRED VERIFICATION
+
+Test:
+1. The exact four-RIGHT tutorial sequence.
+2. The barrier is created at (2,1), not (2,2).
+3. Preview highlights (2,1) without changing state.
+4. Collection undo restores the specified state.
+5. Replaying the collection after undo works correctly.
+6. Attempting to move into a barrier leaves state unchanged.
+7. Ordinary moves and revisiting collected squares create no barriers.
+8. Entering the portal before collecting the fragment does not win.
+9. Undo after victory restores gameplay.
+10. Restart restores the original level.
+11. Every included level has a verified solution.
+
+Run a complete browser playthrough when browser tools are available. Report automated checks and manual playtesting separately.
+
+DELIVERABLES
+
+- Working browser game
+- Reusable engine
+- Exact tutorial level
+- Remaining supplied or provisional levels
+- Solver and recorded solutions
+- Focused validation checks
+- README with setup, run, and verification commands
+- Level-format documentation
+- Artist integration notes
+- AI_LOG.md documenting actual prompts, tools, and corrections
+
+Only record an AI mistake if one actually occurs.
+
+WORK ORDER
+
+First make the exact tutorial playable with preview, collection, barrier creation, portal activation, undo, restart, and victory.
+
+Then validate it and integrate the remaining levels.
+
+Maintain a playable build at least every 20 minutes where practical. Keep this milestone local and browser-based; accounts, databases, multiplayer, and leaderboards are outside its scope.
+
+Proceed with implementation rather than stopping at a plan. Ask only when a missing detail genuinely blocks progress.
+
+When the tutorial build is ready, provide its local test URL and the exact four-RIGHT test steps for the Puzzle Master.
+
+At completion, report what works, how to run it, what was verified, and any remaining issues.

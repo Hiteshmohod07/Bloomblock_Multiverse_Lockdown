@@ -1,0 +1,192 @@
+[
+  {
+    "id": "level-1",
+    "name": "The First Seal",
+    "subtitle": "Learn what you leave behind.",
+    "hint": "Move RIGHT four times. Every step seals the square behind you. Watch out for surprise rifts beside you.",
+    "rows": 5,
+    "columns": 5,
+    "start": {
+      "row": 2,
+      "column": 0
+    },
+    "fragments": [
+      {
+        "row": 2,
+        "column": 2
+      }
+    ],
+    "exit": {
+      "row": 2,
+      "column": 4
+    },
+    "walls": []
+  },
+  {
+    "id": "level-2",
+    "name": "TWO REALITIES",
+    "subtitle": "Two fragments. One escape. Every move changes the maze.",
+    "hint": "Two realities are breaking apart. Orange A and purple B must both be recovered before the portal opens.",
+    "rows": 5,
+    "columns": 5,
+    "start": {
+      "row": 4,
+      "column": 2
+    },
+    "fragments": [
+      {
+        "row": 1,
+        "column": 3
+      },
+      {
+        "row": 0,
+        "column": 4
+      }
+    ],
+    "exit": {
+      "row": 1,
+      "column": 4
+    },
+    "walls": [
+      {
+        "row": 1,
+        "column": 0
+      },
+      {
+        "row": 1,
+        "column": 1
+      },
+      {
+        "row": 2,
+        "column": 4
+      },
+      {
+        "row": 3,
+        "column": 0
+      },
+      {
+        "row": 4,
+        "column": 3
+      }
+    ]
+  },
+  {
+    "id": "level-3",
+    "name": "The Forbidden Route",
+    "subtitle": "Medium - Navigate the forbidden route.",
+    "hint": "Think beyond the nearest fragment. Protect your route to the orange portal.",
+    "rows": 5,
+    "columns": 5,
+    "start": {
+      "row": 4,
+      "column": 0
+    },
+    "fragments": [
+      {
+        "row": 2,
+        "column": 2
+      },
+      {
+        "row": 4,
+        "column": 3
+      }
+    ],
+    "exit": {
+      "row": 0,
+      "column": 4
+    },
+    "walls": [
+      {
+        "row": 1,
+        "column": 0
+      },
+      {
+        "row": 1,
+        "column": 1
+      },
+      {
+        "row": 3,
+        "column": 1
+      },
+      {
+        "row": 3,
+        "column": 2
+      },
+      {
+        "row": 3,
+        "column": 3
+      }
+    ]
+  },
+  {
+    "id": "level-4",
+    "name": "The Fractured Timeline",
+    "subtitle": "Medium-Hard - Every seal changes the timeline.",
+    "hint": "An open chamber still has consequences. Time Rewind lets you reconsider any move.",
+    "rows": 5,
+    "columns": 5,
+    "start": {
+      "row": 4,
+      "column": 0
+    },
+    "fragments": [
+      {
+        "row": 2,
+        "column": 2
+      },
+      {
+        "row": 4,
+        "column": 4
+      }
+    ],
+    "exit": {
+      "row": 0,
+      "column": 4
+    },
+    "walls": []
+  },
+  {
+    "id": "level-5",
+    "name": "Collapse of the Multiverse",
+    "subtitle": "Hard - The final convergence.",
+    "hint": "Walls and magical seals shape the last crossing. Keep a path to the portal.",
+    "rows": 5,
+    "columns": 5,
+    "start": {
+      "row": 4,
+      "column": 0
+    },
+    "fragments": [
+      {
+        "row": 2,
+        "column": 2
+      },
+      {
+        "row": 4,
+        "column": 4
+      }
+    ],
+    "exit": {
+      "row": 0,
+      "column": 4
+    },
+    "walls": [
+      {
+        "row": 1,
+        "column": 1
+      },
+      {
+        "row": 1,
+        "column": 2
+      },
+      {
+        "row": 3,
+        "column": 1
+      },
+      {
+        "row": 3,
+        "column": 3
+      }
+    ]
+  }
+]

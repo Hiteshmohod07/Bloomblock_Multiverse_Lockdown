@@ -1,0 +1,89 @@
+[
+  {
+    "id": "level-1",
+    "status": "solved",
+    "solution": [
+      "right",
+      "right",
+      "right",
+      "right"
+    ],
+    "explored": 49,
+    "discovered": 88
+  },
+  {
+    "id": "level-2",
+    "status": "solved",
+    "solution": [
+      "up",
+      "up",
+      "up",
+      "right",
+      "up",
+      "right",
+      "down"
+    ],
+    "explored": 66,
+    "discovered": 97
+  },
+  {
+    "id": "level-3",
+    "status": "solved",
+    "solution": [
+      "right",
+      "right",
+      "right",
+      "right",
+      "up",
+      "up",
+      "left",
+      "left",
+      "up",
+      "up",
+      "right",
+      "right"
+    ],
+    "explored": 164,
+    "discovered": 180
+  },
+  {
+    "id": "level-4",
+    "status": "solved",
+    "solution": [
+      "up",
+      "up",
+      "right",
+      "right",
+      "down",
+      "down",
+      "right",
+      "right",
+      "up",
+      "up",
+      "up",
+      "up"
+    ],
+    "explored": 2379,
+    "discovered": 3716
+  },
+  {
+    "id": "level-5",
+    "status": "solved",
+    "solution": [
+      "up",
+      "up",
+      "right",
+      "right",
+      "down",
+      "down",
+      "right",
+      "right",
+      "up",
+      "up",
+      "up",
+      "up"
+    ],
+    "explored": 35,
+    "discovered": 39
+  }
+]

@@ -1,0 +1,37 @@
+// One-time import from the supplied archive. Do not rerun after editing client components.
+import { readFile, writeFile } from 'node:fs/promises';
+let text = await readFile('reference-ui/src/components/GbaArena.tsx', 'utf8');
+const change = (from, to) => {
+  if (!text.includes(from)) throw new Error(`Missing archive UI anchor: ${from.slice(0, 60)}`);
+  text = text.replace(from, to);
+};
+change("import React from 'react';", "import React from 'react';\nimport { GameBoard } from './GameBoard';");
+change('  playerPos: { row: number; col: number };', '  playerPos: { row: number; col: number };\n  riftPos: { row: number; col: number } | null;');
+change('  playerPos,\n  sealedTiles,', '  playerPos,\n  facing,\n  riftPos,\n  sealedTiles,');
+change('const shardsDisplay = `${collectedShardIds.size} / ${level.totalShards}`;', 'const shardsDisplay = `${collectedShardIds.size}/${level.totalShards}`;');
+const start = text.indexOf('            {/* 5x5 Grid Board Container */}');
+const end = text.indexOf('            {/* Tile Legend Footnote */}', start);
+if (start < 0 || end < 0) throw new Error('Missing archive board boundaries');
+text = text.slice(0, start) + '            <GameBoard level={level} player={playerPos} facing={facing} sealed={sealedTiles} collected={collectedShardIds} rift={riftPos} won={isCompleted} trapped={isTrapped} onTileClick={onTileClick} />\n\n' + text.slice(end);
+change('{hasAdjacentShard && !isCompleted && (', '{!isCompleted && (');
+change('SEAL PREVIEW: Entering the golden fragment will permanently seal your current departure tile!', 'EVERY STEP SEALS THE TILE YOU LEAVE. Surprise rifts can appear beside you without warning.');
+change('UNDO: [SPACE] OR [B]', 'UNDO: [Z] / [SPACE] / [B]');
+change('ACTION: [ENTER] OR [A]', 'SCAN: [ENTER]');
+change('REWIND 1 STEP', 'TIME REWIND');
+change('ACTION (A)', 'SCAN (ENTER)');
+change('<span>SEALED RIFT</span>', '<span>TRAIL BLOCK</span>');
+change('<p className="font-[\'VT323\'] text-xl sm:text-2xl text-[#2D3748] leading-tight tracking-wide">', '<p id="message" role="status" aria-live="polite" className="font-[\'VT323\'] text-xl sm:text-2xl text-[#2D3748] leading-tight tracking-wide">');
+change('        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">', '        <div role="dialog" aria-modal="true" aria-labelledby="victory-title" data-dialog="victory" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">');
+change('<h2 className="font-[\'Epilogue\'] font-black text-3xl', '<h2 id="victory-title" tabIndex={-1} className="font-[\'Epilogue\'] font-black text-3xl');
+change('            {/* Next Level & Replay Buttons */}', '            <button type="button" onClick={onRewind} className="text-sm font-bold underline py-2">Time Rewind - undo victory</button>\n            {/* Next Level & Replay Buttons */}');
+text = text.replace('{shardsDisplay}', '<span id="fragment-count">{shardsDisplay}</span>').replace('{stepDisplay}', '<span id="moves">{stepDisplay}</span>');
+await writeFile('client/components/GbaArena.tsx', text);
+let modal = await readFile('reference-ui/src/components/LevelSelectModal.tsx', 'utf8');
+modal = modal.replace('<div className="fixed inset-0 z-50', '<div role="dialog" aria-modal="true" aria-label="Select level" data-dialog="level" className="fixed inset-0 z-60');
+modal = modal.replace('            onClick={onClose}', '            aria-label="Close level selector" onClick={onClose}');
+modal = modal.replace('<div\n                key={lvl.id}', '<button type="button"\n                key={lvl.id}').replace('              </div>\n            );', '              </button>\n            );');
+await writeFile('client/components/LevelSelectModal.tsx', modal);
+let title = await readFile('reference-ui/src/components/TitleMenu.tsx', 'utf8');
+title = title.replace('CHIPTUNE BGM:', 'MENU MUSIC:');
+title = title.replace('<span className="material-symbols-outlined text-5xl text-[#ea580c] animate-spark">\n              magic_button\n            </span>', '<img src="/assets/player/south.png" alt="Sorcerer" className="w-20 h-20 object-contain" style={{imageRendering:"pixelated"}} />');
+await writeFile('client/components/TitleMenu.tsx', title);

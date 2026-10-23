@@ -1,0 +1,7 @@
+node_modules
+web-dist
+.git
+Things_to _add
+reference-ui
+.env*
+*.log

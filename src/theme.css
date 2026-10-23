@@ -1,0 +1,20 @@
+:root {
+  --bg: #111918;
+  --text: #eee9d9;
+  --muted: #a4ae9d;
+  --line: #344138;
+  --gold: #d6b77a;
+  --mint: #9fdfc7;
+  --floor: #303e30;
+  --wall: #19251e;
+  --barrier: #df9965;
+  --preview: #c8a0ed;
+  --fragment-a: #ffb05f;
+  --fragment-b: #c49aff;
+  --fragment-purple: #c49aff;
+  --fragment-cyan: #76e6ed;
+  --seal-fire: #f08757;
+  --rift: #76e6ed;
+  --move-ms: 140ms;
+  --seal-ms: 280ms;
+}

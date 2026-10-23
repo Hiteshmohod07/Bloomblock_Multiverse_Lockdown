@@ -1,0 +1,162 @@
+﻿PIXATHON: SUMMARY AND CLASS-BASED WORK DIVISION
+
+Source: C:\Users\ALIENWARE\Downloads\Pixathon Orientation + Build with AI_v1.pdf
+
+SUMMARY
+
+Pixathon is a puzzle-building hackathon. Your team must create a playable puzzle game, demonstrate how AI helped, and deliver a 60-second pitch. The four classes in the PDF are team roles: Driver, Artist, Puzzle Master, and Bard.
+
+- Event: 23 October 2026, starting at 3:30 PM at VYAS, MIT-WPU.
+- Problem statement: Revealed at the event. Puzzle examples in the slides are illustrations, not the final assignment.
+- Submission: A public GitHub repository link is required. A live playable link is optional.
+- AI evidence: Include AI_LOG.md with the tools used, 5-10 key prompts, and one example of AI making a mistake and how you corrected it.
+- Progress evidence: Commit after each working version.
+- Pitch: 60 seconds, with approximately 30 seconds explaining your AI use.
+- Build rule: Never go more than 20 minutes without a playable build.
+
+JUDGING CRITERIA
+
+Smart use of AI: 40 points
+Evidence that you used AI thoughtfully and checked its results.
+
+Creativity and originality: 20 points
+A fresh twist on a puzzle.
+
+Usability: 15 points
+Someone unfamiliar with the game can play without help.
+
+Feel and design: 10 points
+Consistent visuals, sound, feedback, and polish.
+
+Pitch: 10 points
+A clear, convincing demonstration.
+
+Fun factor: 5 points
+A game that makes judges want another level.
+
+Total: 100 points.
+
+AI documentation deserves continuous attention because it supports the largest scoring category. The remaining 60 points reward the game and its presentation.
+
+WORK DIVISION BY CLASS
+
+The four classes come from page 19. Their responsibilities are stated in the PDF; the detailed assignments and deliverables below are a suggested implementation plan.
+
+1. DRIVER - CODE AND WORKING BUILD
+
+Main responsibility: Own the code and working build.
+
+Assigned work:
+- Set up the public GitHub repository.
+- Operate the AI coding tool.
+- Implement movement, puzzle rules, win conditions, restart, and level transitions.
+- Integrate assets from the Artist and levels from the Puzzle Master.
+- Fix bugs and commit working versions.
+
+Deliverables: Playable game, integrated final build, and public repository.
+
+2. ARTIST - VISUALS AND AUDIO
+
+Main responsibility: Own the game's visual and audio presentation.
+
+Assigned work:
+- Establish a consistent style.
+- Create sprites, tiles, buttons, menus, and gameplay UI.
+- Generate music and sound effects.
+- Give the Driver assets early and improve them as the game develops.
+
+Deliverables: Organized visual/audio assets, readable UI, and consistent presentation.
+
+3. PUZZLE MASTER - LEVELS, TESTING, AND FUN
+
+Main responsibility: Own level design, testing, and player experience.
+
+Assigned work:
+- Define the puzzle rules with the team.
+- Design 5 or more levels, each introducing an idea.
+- Check that every level is solvable.
+- Test controls and edge cases.
+- Record bugs and identify confusing or uninteresting gameplay.
+- Observe an unfamiliar player testing the game.
+
+Deliverables: Tested level set, solution checks, and prioritized bug reports.
+
+4. BARD - DOCUMENTATION, PITCH, AND TIME
+
+Main responsibility: Own AI_LOG.md, the pitch, and timekeeping.
+
+Assigned work:
+- Maintain AI_LOG.md throughout the event.
+- Collect prompts, tools used, and AI corrections from everyone.
+- Track milestones and remind teammates of deadlines.
+- Prepare the demonstration and rehearse the pitch.
+- Check submission readiness.
+
+Deliverables: Complete AI log, 60-second pitch, and submission checklist.
+
+TOOLS PRESENTED IN THE PDF
+
+- Driver: Antigravity, Kiro, or Codex for development; v0 or Replit where useful.
+- Artist: Stitch for UI, PixelLab for pixel art, Suno for music, and ElevenLabs for sound effects.
+- Puzzle Master: Work with the Driver to use AI for level validation or a solver.
+- Bard: Collect evidence from every tool used across the team.
+
+These are tools presented in the PDF. You do not need to use every tool; the rubric rewards how well AI is used.
+
+EVENT TIMELINE AND WORK ALLOCATION
+
+The following milestones follow page 18.
+
+3:30-4:00 PM - CHOOSE THE CONCEPT
+- Everyone brainstorms.
+- Puzzle Master defines the rules.
+- Driver checks technical feasibility.
+- Artist sets the visual style.
+- Bard records decisions.
+
+4:00-4:20 PM - MAKE LEVEL 1 PLAYABLE
+- Driver builds the core gameplay.
+- Puzzle Master tests it.
+- Artist supplies basic assets.
+- Bard logs AI use.
+
+4:20-5:10 PM - BUILD LEVELS AND CONTENT
+- Puzzle Master creates 5 or more levels.
+- Driver integrates and validates them.
+- Artist develops assets.
+- Bard gathers evidence.
+
+5:10-5:35 PM - POLISH
+- Artist leads visuals and audio.
+- Driver integrates the improvements.
+- Puzzle Master checks clarity and fun.
+- Bard drafts the pitch.
+
+5:35-5:50 PM - FINAL TESTING AND RELEASE PREPARATION
+- Driver checks the repository and deploys if chosen.
+- Puzzle Master observes an unfamiliar player.
+- Artist fixes readability issues.
+- Bard checks submission materials.
+
+5:50-6:00 PM - PREPARE THE PITCH
+- Bard leads rehearsal.
+- Driver prepares the demo.
+- Everyone supplies their strongest contribution.
+
+Timing discrepancy: The slides call this a "2-hour" plan, but the displayed schedule spans 3:30-6:00 PM, or 2.5 hours. Use the displayed milestones for planning and confirm the actual cutoff with organizers.
+
+SMALLER TEAMS
+
+The PDF allows combining classes. Suggested combinations:
+- 3 people: Driver; Artist; Puzzle Master + Bard.
+- 2 people: Driver + Bard; Artist + Puzzle Master.
+- 1 person: Cover all four roles, keeping the game small enough to finish.
+
+BEFORE ARRIVING
+
+- Have a GitHub account; the deck also suggests applying for the Student Pack.
+- Check your tool accounts and logins.
+- Confirm teammates and class assignments.
+- Join the Pixathon WhatsApp group.
+- Play three puzzle games and note what makes them work.
+- Bring your laptop, charger, and a puzzle idea or two.

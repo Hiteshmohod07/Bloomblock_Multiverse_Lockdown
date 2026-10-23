@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111918">
+  <meta name="description" content="A turn-based maze in a fractured Sanctum. Every step leaves a permanent seal, and surprise rifts appear next to you without warning.">
+  <title>Bloomlock — Multiverse Lockdown</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctext y='32' font-size='34'%3E✦%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <a href="./" class="brand" aria-label="Bloomlock home"><span class="brand-mark" aria-hidden="true">✧</span><span>BLOOMLOCK<small>MULTIVERSE LOCKDOWN</small></span></a>
+      <span class="edition">SANCTUM ARCHIVES <b> / 001</b></span>
+    </header>
+    <main>
+      <section class="intro"><span class="eyebrow">A PUZZLE WITH CONSEQUENCES</span><h1>Every step.<br>One less way back.</h1><p>Collect every fragment and reach the portal. Every step seals the square you leave. Beware: surprise rifts appear beside you at random moments.</p></section>
+      <div class="game-layout">
+        <aside class="chapters"><div class="section-label">THE FRACTURED SANCTUM <span id="progress">01 / 05</span></div><nav id="levels" aria-label="Choose a level"></nav><div class="field-note"><span class="eyebrow">A NOTE FROM THE SORCERER</span><p id="hint"></p><span class="signature">— Doctor Strange</span></div></aside>
+        <section class="play-area" aria-label="Game">
+          <div class="board-toolbar"><div><span class="eyebrow" id="level-number">CHAMBER 01</span><h2 id="level-name"></h2></div><div class="stats"><span><b id="fragment-count">0/1</b>FRAGMENTS</span><span><b id="moves">00</b>MOVES</span></div></div>
+          <p class="level-subtitle" id="level-subtitle"></p>
+          <div class="board-surround"><div class="corner top-left"></div><div class="corner bottom-right"></div><div id="board" tabindex="0" role="group" aria-label="Maze. Use arrow keys or WASD to move."></div><div class="board-caption"><span>✦ SANCTUM INTEGRITY</span><span id="portal-status">PORTAL DORMANT</span></div></div>
+          <div id="message" class="message" role="status" aria-live="polite"></div>
+          <div class="actions"><button id="undo" class="primary">↶ <span>Time Rewind</span><kbd>Z</kbd></button><button id="restart">↻ Restart <kbd>R</kbd></button><button id="next" class="next" hidden>Next chamber →</button></div>
+          <div class="under-board"><div class="legend"><span><i class="legend-player">▲</i> You</span><span><i class="legend-fragment">◆</i> Fragment</span><span><i class="legend-portal">◎</i> Portal</span><span><i class="legend-barrier">▧</i> Trail seal</span><span><i class="legend-rift">✣</i> Surprise rift</span></div><div class="dpad" aria-label="Direction controls"><button data-direction="up" aria-label="Move up">↑</button><button data-direction="left" aria-label="Move left">←</button><button data-direction="down" aria-label="Move down">↓</button><button data-direction="right" aria-label="Move right">→</button></div></div>
+          <p class="control-note">ARROWS / WASD TO MOVE <span>·</span> One press, one step. Hover or focus a direction to preview its seal.</p>
+        </section>
+      </div>
+    </main>
+    <footer><span>FIVE CHAMBERS. COUNTLESS TIMELINES.</span><span>PIXATHON ’26 <i>✧</i> TOPIC 03</span></footer>
+  </div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

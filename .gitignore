@@ -1,0 +1,14 @@
+node_modules/
+web-dist/
+*.log
+.env
+.env.local
+.env.*
+!.env.example
+.vercel/
+Things_to _add/
+reference-ui/
+.codex/
+.agents/
+.aws/
+.deployment-check/
